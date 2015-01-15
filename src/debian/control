@@ -1,0 +1,7 @@
+Source: pid-ns
+Maintainer: Josh Snyder <josh@code406.com>
+
+Package: pid-ns
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: a tool for running commands within pid namespaces
