@@ -8,10 +8,29 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+int usage(char * name) {
+	printf("Usage: %s <command> <arg1> ... <argn>\n", name);
+	return 252;
+}
+
+
 int main(int argc, char * argv[]) {
-	if (argc < 2) {
-		printf("Usage: %s <command> <arg1> ... <argn>\n", argv[0]);
-		return 252;
+	int arg = 0;
+	int detach = 0;
+
+	while((arg = getopt(argc, argv, "d")) != -1) {
+		switch(arg) {
+		case 'd':
+			detach = 1;
+			break;
+		default:
+			return usage(argv[0]);
+			break;
+		}
+	}
+
+	if (argc < optind + 1) {
+		return usage(argv[0]);
 	}
 
 	int ret;
@@ -44,6 +63,10 @@ int main(int argc, char * argv[]) {
 		} else {
 			return 126;
 		}
+	}
+
+	if(detach) {
+		return 0;
 	}
 
 	int status;
