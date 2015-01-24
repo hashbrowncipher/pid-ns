@@ -29,9 +29,8 @@ int main(int argc, char * argv[]) {
 		}
 	}
 
-	int command_start = optind + 1;
 
-	if (argc < command_start) {
+	if (argc < optind + 1) {
 		return usage(argv[0]);
 	}
 
@@ -56,7 +55,7 @@ int main(int argc, char * argv[]) {
 	if (ret < 0) {
 		return 255;
 	} else if (ret == 0) {
-		execvp(argv[command_start], argv + command_start);
+		execvp(argv[optind], argv + optind);
 
 		/* If we get here, execvp has failed.  Set the exit code in accordance
 		 * with POSIX */
