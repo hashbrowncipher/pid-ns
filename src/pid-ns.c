@@ -9,7 +9,7 @@
 #include <unistd.h>
 
 int usage(char * name) {
-	printf("Usage: %s <command> <arg1> ... <argn>\n", name);
+	printf("Usage: %s [-d] <command> <arg1> ... <argn>\n", name);
 	return 252;
 }
 
