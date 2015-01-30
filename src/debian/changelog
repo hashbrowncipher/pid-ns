@@ -1,3 +1,9 @@
+pid-ns (0.0.5) lucid; urgency=low
+
+  * fix getopt invocation
+
+ -- Josh Snyder <josnyder@yelp.com>  Thu, 29 Jan 2015 16:27:07 -0800
+
 pid-ns (0.0.3ubuntu1) UNRELEASED; urgency=medium
 
   * again
