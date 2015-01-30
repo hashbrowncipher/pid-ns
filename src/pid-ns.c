@@ -18,7 +18,7 @@ int main(int argc, char * argv[]) {
 	int arg = 0;
 	int detach = 0;
 
-	while((arg = getopt(argc, argv, "d")) != -1) {
+	while((arg = getopt(argc, argv, "+d")) != -1) {
 		switch(arg) {
 		case 'd':
 			detach = 1;
